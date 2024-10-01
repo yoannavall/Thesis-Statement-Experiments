@@ -1,0 +1,55 @@
+Prompt (1): Java Class Generation
+- Write a Java class for a singly linked list with methods to insert an element at the end, delete an element by key, and print the list.
+
+
+
+Prompt (2): Documentation Generation based on Generated Code
+- Generate a comprehensive confluence-format documentation for the following Java code:
+public class SinglyLinkedList {
+   private Node head; // represents the beginning of the list
+   
+   public void insertAtEnd(int element) {
+       Node newNode = new Node(element);
+       if (head == null) {
+           head = newNode;
+       } else {
+           tail.next = newNode;
+           tail = newNode;
+       }
+   }
+   
+   public boolean deleteByKey(int key) {
+       Node current = head;
+       while (current != null && current.data != key) {
+           current = current.next;
+       }
+       if (current == null) {
+           return false; // not found
+       }
+       if (current == tail) {
+           tail = current.prev;
+       } else {
+           current.prev.next = current.next;
+       }
+       return true; // deleted successfully
+   }
+   
+   public void print() {
+       Node current = head;
+       while (current != null) {
+           System.out.print(current.data + " ");
+           current = current.next;
+       }
+       System.out.println();
+   }
+   
+   static class Node {
+       int data;
+       Node next;
+       Node prev;
+       
+       public Node(int data) {
+           this.data = data;
+       }
+   }
+}
