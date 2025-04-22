@@ -1,0 +1,35 @@
+You are an expert AI evaluator.
+
+### Task Description:
+{instruction}
+
+### Model-Generated Code:
+{generated_code}
+
+### Model-Generated Documentation:
+{generated_docs}
+
+Evaluate both the code and the documentation using these criteria:
+
+1. **Code Correctness** – Does the code correctly implement the task?
+2. **Code Quality** – Is it clean, readable, and efficient?
+3. **Documentation Accuracy** – Does the explanation match what the code actually does?
+4. **Documentation Clarity** – Is the explanation clear, well-structured, and helpful?
+
+Give scores from 1 (poor) to 6 (excellent) for each criterion.
+Then provide short justifications.
+
+Respond in JSON like this:
+
+{{
+  "code_correctness": <1-6>,
+  "code_quality": <1-6>,
+  "doc_accuracy": <1-6>,
+  "doc_clarity": <1-6>,
+  "explanation": {{
+    "code_correctness": "...",
+    "code_quality": "...",
+    "doc_accuracy": "...",
+    "doc_clarity": "..."
+  }}
+}}
